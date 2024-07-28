@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Pantry</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Welcome to my Pantry</h1>
+
+    <a href="/users/<%=user._id%>/tickets/new">Add pantry</a>
+    <!-- Add the following: -->
+    <!-- views/foods/index.ejs -->
+    <% if(tickets.length===0){ %>
+    <p>there is no item</p>
+    <% }else{ %>
+
+    <ul>
+      <% tickets.forEach((ticket)=>{ %>
+      <li>
+        <%= ticket.name %>
+        <a href="/users/<%= user._id %>/tickets/<%= ticket._id %>/edit"> Edit </a>
+
+        <form
+          action="/users/<%= user._id %>/tickets/<%= ticket._id %>?_method=DELETE"
+          method="POST"
+        >
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+
+      <% }) %>
+    </ul>
+    <% }%>
+  </body>
+</html>

@@ -1,12 +1,12 @@
 # Booking Flight Tickets Application
 
-## **broject scope :**
+## **project scope :**
 
 the main idea of this application that is a booking tickets app so the user will sign up then will go to sign in and he will start booking by choosing country then he will choose the date and the level so there will be list of choises.
 
 ## **ERD :**
 
-![hello](Screenshot%202024-07-25%20163132.png)
+![hello](./plan%20images/Screenshot%202024-07-25%20163132.png)
 
 ## **User Stories :**
 
@@ -19,12 +19,11 @@ the main idea of this application that is a booking tickets app so the user will
 * as a user , i want to be able to sign out
 
 ##  routes
-![first](Screenshot%202024-07-25%20190408.png)
-![second](./Screenshot%202024-07-25%20190731.png)
-![third](./Screenshot%202024-07-25%20190801.png)
-![fourth](Screenshot%202024-07-25%20190408.png)
-![fifth](./Screenshot%202024-07-25%20191349.png)
-![edit](./Screenshot%202024-07-25%20192446.png)
+![first](./plan%20images/Screenshot%202024-07-25%20190408.png)
+![second](./plan%20images/Screenshot%202024-07-25%20190731.png)
+![third](./plan%20images/Screenshot%202024-07-25%20190801.png)
+![fourth](./plan%20images/Screenshot%202024-07-25%20191349.png)
+![fifth](./plan%20images/Screenshot%202024-07-25%20192446.png)
 
 ## level up 
 maybe i will addd price also 
