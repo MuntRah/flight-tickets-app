@@ -15,15 +15,13 @@ const ticketSchema = new mongoose.Schema({
     enum: ["One-Way", "Transit", "Round-Trip"],
   },
   level: {
-    // Correctly define level
-    type: String, // Use type property for String
+    type: String, 
     required: true,
-    enum: ["First", "Economy", "Business"], // Fixed the spelling of "Business"
+    enum: ["First", "Economy", "Business"], 
   },
 });
 
 const userSchema = new mongoose.Schema({
-  // Updated to use `new mongoose.Schema()`
   username: {
     type: String,
     required: true,
@@ -32,7 +30,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tickets: [ticketSchema], // Embed the ticketSchema
+  tickets: [ticketSchema], 
 });
 
 const User = mongoose.model("User", userSchema);

@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
 
-    res.render("applications/index.ejs", {
+    res.render("tickets/index.ejs", {
       tickets: currentUser.tickets,
     });
   } catch (error) {
@@ -23,97 +23,73 @@ router.get("/new", (req, res) => {
   res.render("tickets/new.ejs");
 });
 
-// controllers/applications.js`
-
 router.post("/", async (req, res) => {
   try {
-    // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    // Push req.body (the new form data object) to the
-    // applications array of the current user
+
     req.body.date = new Date(req.body.date);
     currentUser.tickets.push(req.body);
-    // Save changes to the user
+
     await currentUser.save();
-    // Redirect back to the applications index view
+
     res.redirect(`/users/${currentUser._id}/tickets`);
   } catch (error) {
-    // If any errors, log them and redirect back home
     console.log(error);
     res.redirect("/");
   }
 });
-
-// controllers/applications.js
-
-// controllers/applications.js
 
 router.get("/:ticketId", async (req, res) => {
   try {
-    // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    // Find the application by the applicationId supplied from req.params
-    const application = currentUser.tickets.id(req.params.ticketId);
-    // Render the show view, passing the application data in the context object
-    res.render("tickets/show.ejs", {
-      application: application,
+    const ticket = currentUser.tickets.id(req.params.ticketId);
+    res.render("tickets/edit.ejs", {
+      ticket: ticket,
     });
   } catch (error) {
-    // If any errors, log them and redirect back home
     console.log(error);
     res.redirect("/");
   }
 });
-// controllers/applications.js
 
 router.delete("/:ticketId", async (req, res) => {
   try {
-    // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    // Use the Mongoose .deleteOne() method to delete
-    // an application using the id supplied from req.params
+
     currentUser.tickets.id(req.params.ticketId).deleteOne();
-    // Save changes to the user
+
     await currentUser.save();
-    // Redirect back to the applications index view
     res.redirect(`/users/${currentUser._id}/tickets`);
   } catch (error) {
-    // If any errors, log them and redirect back home
     console.log(error);
     res.redirect("/");
   }
 });
-
-// controllers/applications.js
 
 router.get("/:ticketId/edit", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const application = currentUser.applications.id(req.params.ticketId);
+    const ticket = currentUser.tickets.id(req.params.ticketId);
     res.render("tickets/edit.ejs", {
-      application: application,
+      ticket: ticket,
+      user: currentUser, // Pass the user if needed for the form action
+      VALID_TYPES: VALID_TYPES, // Pass VALID_TYPES
+      VALID_LEVELS: VALID_LEVELS, // Pass VALID_LEVELS
     });
   } catch (error) {
     console.log(error);
     res.redirect("/");
   }
 });
-// controllers/applications.js`
 
 router.put("/:ticketId", async (req, res) => {
   try {
-    // Find the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    // Find the current application from the id supplied by req.params
     const ticket = currentUser.tickets.id(req.params.ticketId);
-    // Use the Mongoose .set() method
-    // this method updates the current application to reflect the new form
-    // data on `req.body`
+
     ticket.set(req.body);
-    // Save the current user
     await currentUser.save();
-    // Redirect back to the show view of the current application
-    res.redirect(`/users/${currentUser._id}/tickets/${req.params.ticketId}`);
+    res.redirect(`/users/${currentUser._id}/tickets/`);
   } catch (error) {
     console.log(error);
     res.redirect("/");

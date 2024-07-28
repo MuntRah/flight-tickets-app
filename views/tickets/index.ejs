@@ -3,24 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Pantry</title>
+    <title>My tickets</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Welcome to my Pantry</h1>
+    <h1>Tickets List</h1>
 
-    <a href="/users/<%=user._id%>/tickets/new">Add pantry</a>
-    <!-- Add the following: -->
-    <!-- views/foods/index.ejs -->
-    <% if(tickets.length===0){ %>
-    <p>there is no item</p>
-    <% }else{ %>
+    <a href="/users/<%= user._id %>/tickets/new">Add Tickets</a>
 
+    <% if (tickets.length === 0) { %>
+    <p>There are no booked tickets</p>
+    <% } else { %>
     <ul>
-      <% tickets.forEach((ticket)=>{ %>
+      <% tickets.forEach((ticket) => { %>
       <li>
-        <%= ticket.name %>
-        <a href="/users/<%= user._id %>/tickets/<%= ticket._id %>/edit"> Edit </a>
+        <div><%= ticket.country %></div>
+
+        <div><%= ticket.date %></div>
+
+        <div><%= ticket.level %></div>
+
+        <div><%= ticket.type %></div>
+
+        <% let price; %> <% if (ticket.level === 'First' && ticket.type ===
+        'One-Way')
+         {%> <% price = '2000$'; %> <% } else if (ticket.level ===
+        'First' && ticket.type === 'Transit') {%> <% price = '1800$';%> <% }
+        else if (ticket.level === 'First' && ticket.type === 'Round-Trip') {%>
+        <% price = '4000$';%> <%} else if (ticket.level === 'Business' &&
+        ticket.type === 'One-Way') {%> <% price = '1000$';%> <% } else if
+        (ticket.level === 'Business' && ticket.type === 'Transit') {%> <% price
+        = '800$';%> <% } else if (ticket.level === 'Business' && ticket.type ===
+        'Round-Trip') {%> <% price = '900$';%> <% } else if (ticket.level ===
+        'Economy' && ticket.type === 'One-Way') {%> <% price = '750$';%> <% }
+        else if (ticket.level === 'Economy' && ticket.type === 'Transit') {%> <%
+        price = '650$';%> <% } else if (ticket.level === 'Economy' &&
+        ticket.type === 'Round-Trip') {%> <% price = '850$';%> <% } else {%> <%
+        price = 'Unknown'; %> <% }%>
+
+        <p>Price: <%= price %></p>
+
+        <a href="/users/<%= user._id %>/tickets/<%= ticket._id %>/edit">Edit</a>
 
         <form
           action="/users/<%= user._id %>/tickets/<%= ticket._id %>?_method=DELETE"
@@ -29,9 +53,8 @@
           <button type="submit">Delete</button>
         </form>
       </li>
-
       <% }) %>
     </ul>
-    <% }%>
+    <% } %>
   </body>
 </html>

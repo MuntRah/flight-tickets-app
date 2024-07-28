@@ -3,28 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Add Ticket</title>
     <link rel="stylesheet" href="/stylesheet/style.css" />
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>add new app</h1>
+    <h1>Add Ticket</h1>
 
     <form action="/users/<%= user._id %>/tickets" method="POST">
-      <label for="name">name:</label>
-      <input type="text" name="name" id="name" required />
-      <label for="date">Date</label>
-      <label for="name">name:</label>
-      <select type="text" name="name" id="name" required>
-<option value=""></option>
+      <label for="country">Country:</label>
+      <input type="text" name="country" id="country" required />
+
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" required />
+
+      <label for="type">Type:</label>
+      <select name="type" id="type" required>
+        <option value="One-Way">One Way</option>
+        <option value="Transit">Transit</option>
+        <option value="Round-Trip">Round Trip</option>
+      </select>
+
+      <label for="level">Level:</label>
+      <select name="level" id="level" required>
+        <option value="First">First</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+      </select>
 
 
-
-
-      </select >
-
-
-      <input type="submit" class="submit" />
+      <input type="submit" class="submit" value="Add Ticket" />
     </form>
   </body>
 </html>
