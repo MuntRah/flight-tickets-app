@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Ticket</title>
+    <link rel="stylesheet" href="/stylesheet/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit Ticket</h1>
+
+    <form action="/users/<%= user._id %>/tickets/<%= ticket._id %>?_method=PUT" method="POST">
+      <label for="country">Country:</label>
+      <input type="text" name="country" id="country" value="<%= ticket.country %>" required />
+
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" value="<%= ticket.date %>" required />
+
+      <label for="type">Type:</label>
+      <select name="type" id="type" required>
+        <option value="One-Way" <%= ticket.type === 'One-Way' ? 'selected' : '' %>>One Way</option>
+        <option value="Transit" <%= ticket.type === 'Transit' ? 'selected' : '' %>>Transit</option>
+        <option value="Round-Trip" <%= ticket.type === 'Round-Trip' ? 'selected' : '' %>>Round Trip</option>
+      </select>
+
+      <label for="level">Level:</label>
+      <select name="level" id="level" required>
+        <option value="First" <%= ticket.level === 'First' ? 'selected' : '' %>>First Class</option>
+        <option value="Economy" <%= ticket.level === 'Economy' ? 'selected' : '' %>>Economy</option>
+        <option value="Business" <%= ticket.level === 'Business' ? 'selected' : '' %>>Business</option>
+      </select>
+
+   
+
+      <input type="submit" class="submit" value="Update Ticket" />
+    </form>
+  </body>
+</html>

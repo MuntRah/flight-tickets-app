@@ -15,9 +15,9 @@ const ticketSchema = new mongoose.Schema({
     enum: ["One-Way", "Transit", "Round-Trip"],
   },
   level: {
-    type: String, 
+    type: String,
     required: true,
-    enum: ["First", "Economy", "Business"], 
+    enum: ["First", "Economy", "Business"],
   },
 });
 
@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  tickets: [ticketSchema], 
+  tickets: [ticketSchema],
 });
 
 const User = mongoose.model("User", userSchema);

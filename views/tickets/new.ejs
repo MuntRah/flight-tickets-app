@@ -1,50 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Ticket</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/stylesheet/style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <%- include('../partials/_navbar.ejs') %>
-    <div class="container mt-4">
-        <h1 class="mb-4">Add Ticket</h1>
+    <h1>Add Ticket</h1>
 
-        <form action="/users/<%= user._id %>/tickets" method="POST">
-            <div class="form-group">
-                <label for="country">Country:</label>
-                <input type="text" class="form-control" name="country" id="country" required />
-            </div>
+    <form action="/users/<%= user._id %>/tickets" method="POST">
+      <label for="country">Country:</label>
+      <input type="text" name="country" id="country" required />
 
-            <div class="form-group">
-                <label for="date">Date:</label>
-                <input type="date" class="form-control" name="date" id="date" required />
-            </div>
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="date" required />
 
-            <div class="form-group">
-                <label for="type">Type:</label>
-                <select name="type" id="type" class="form-control" required>
-                    <option value="One-Way">One Way</option>
-                    <option value="Transit">Transit</option>
-                    <option value="Round-Trip">Round Trip</option>
-                </select>
-            </div>
+      <label for="type">Type:</label>
+      <select name="type" id="type" required>
+        <option value="One-Way">One Way</option>
+        <option value="Transit">Transit</option>
+        <option value="Round-Trip">Round Trip</option>
+      </select>
 
-            <div class="form-group">
-                <label for="level">Level:</label>
-                <select name="level" id="level" class="form-control" required>
-                    <option value="First">First</option>
-                    <option value="Economy">Economy</option>
-                    <option value="Business">Business</option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Add Ticket</button>
-        </form>
-    </div>
+      <label for="level">Level:</label>
+      <select name="level" id="level" required>
+        <option value="First">First</option>
+        <option value="Economy">Economy</option>
+        <option value="Business">Business</option>
+      </select>
 
 
-</body>
+      <input type="submit" class="submit" value="Add Ticket" />
+    </form>
+  </body>
 </html>
