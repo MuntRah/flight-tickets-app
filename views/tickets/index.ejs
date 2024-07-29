@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My tickets</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
@@ -25,14 +25,14 @@
         <div><%= ticket.level %></div>
 
         <div><%= ticket.type %></div>
+       
 
         <% let price; %> <% if (ticket.level === 'First' && ticket.type ===
-        'One-Way')
-         {%> <% price = '2000$'; %> 
-         <% } else if (ticket.level ==='First' && ticket.type === 'Transit') {%> <% price = '1800$';%> 
-         <% }
-        else if (ticket.level === 'First' && ticket.type === 'Round-Trip') {%> <% price = '4000$';%> <%} 
-        else if (ticket.level === 'Business' && ticket.type === 'One-Way') {%> <% price = '1000$';%> <% } else if
+        'One-Way') {%> <% price = '2000$'; %> <% } else if (ticket.level
+        ==='First' && ticket.type === 'Transit') {%> <% price = '1800$';%> <% }
+        else if (ticket.level === 'First' && ticket.type === 'Round-Trip') {%>
+        <% price = '4000$';%> <%} else if (ticket.level === 'Business' &&
+        ticket.type === 'One-Way') {%> <% price = '1000$';%> <% } else if
         (ticket.level === 'Business' && ticket.type === 'Transit') {%> <% price
         = '800$';%> <% } else if (ticket.level === 'Business' && ticket.type ===
         'Round-Trip') {%> <% price = '900$';%> <% } else if (ticket.level ===

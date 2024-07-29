@@ -10,12 +10,14 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add Ticket</h1>
 
+    <% let date = new Date();  
+    let selectedDate =date.toISOString().split('T')[0]; %>
+
     <form action="/users/<%= user._id %>/tickets" method="POST">
       <label for="country">Country:</label>
       <input type="text" name="country" id="country" required />
-
-      <label for="date">Date:</label>
-      <input type="date" name="date" id="date" required />
+      <label for="date">date:</label>
+      <input type="date" id="date" name="date"  min="<%= selectedDate %>" />
 
       <label for="type">Type:</label>
       <select name="type" id="type" required>
@@ -30,7 +32,6 @@
         <option value="Economy">Economy</option>
         <option value="Business">Business</option>
       </select>
-
 
       <input type="submit" class="submit" value="Add Ticket" />
     </form>

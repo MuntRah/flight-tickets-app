@@ -9,13 +9,20 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Edit Ticket</h1>
+    
+    <% 
+    let date = new Date();
+    let DBdate = new Date(ticket.date).toISOString().split('T')[0]; 
+    let selectedDate = date.toISOString().split('T')[0];
+%>
+    
 
     <form action="/users/<%= user._id %>/tickets/<%= ticket._id %>?_method=PUT" method="POST">
       <label for="country">Country:</label>
       <input type="text" name="country" id="country" value="<%= ticket.country %>" required />
 
       <label for="date">Date:</label>
-      <input type="date" name="date" id="date" value="<%= ticket.date %>" required />
+      <input type="date" name="date" id="date" value="<%= DBdate  %>" min="<%= selectedDate %>" max="" required />
 
       <label for="type">Type:</label>
       <select name="type" id="type" required>

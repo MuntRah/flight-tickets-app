@@ -6,6 +6,7 @@ const { render } = require("ejs");
 const VALID_TYPES = ["One-Way", "Transit", "Round-Trip"];
 const VALID_LEVELS = ["First", "Economy", "Business"];
 
+
 router.get("/", async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -21,6 +22,7 @@ router.get("/", async (req, res) => {
 
 router.get("/new", (req, res) => {
   res.render("tickets/new.ejs");
+  
 });
 
 router.post("/", async (req, res) => {
@@ -28,6 +30,7 @@ router.post("/", async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
 
     req.body.date = new Date(req.body.date);
+    
     currentUser.tickets.push(req.body);
 
     await currentUser.save();
