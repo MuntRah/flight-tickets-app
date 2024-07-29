@@ -1,0 +1,100 @@
+/* style.css */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure content fills the viewport */
+}
+
+nav {
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.container {
+  flex: 1; /* Make content grow to fill available space */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 20px;
+  margin-left: 700px;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  margin-left: 550px;
+}
+
+/* ... rest of your styles ... */
+
+/* Label Styles */
+label {
+  display: block; /* Block display for labels */
+  margin-top: 10px; /* Space above each label */
+  font-weight: bold; /* Bold labels for emphasis */
+}
+
+/* Input Styles */
+input[type="text"],
+input[type="password"] {
+  width: 100%; /* Full width inputs */
+  padding: 10px; /* Padding inside inputs */
+  margin-top: 5px; /* Space between label and input */
+  border: 1px solid #ccc; /* Light border color */
+  border-radius: 4px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Button Styles */
+.submit {
+  background-color: #007bff; /* Primary button color */
+  color: #fff; /* White text on buttons */
+  padding: 10px 20px; /* Padding inside button */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners for buttons */
+  cursor: pointer; /* Pointer cursor on hover */
+  margin-top: 15px; /* Space above button */
+  font-size: 16px; /* Font size for buttons */
+  transition: background-color 0.3s; /* Smooth transition for background */
+  width: 100%; /* Full width button */
+}
+
+.submit:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px; /* Smaller heading on mobile */
+  }
+
+  form {
+    width: 90%; /* Full width on smaller screens */
+  }
+}
