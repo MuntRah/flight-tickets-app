@@ -50,7 +50,7 @@ select {
 
 /* Button Styles */
 .submit {
-  background-color: #4CAF50; /* Primary button color */
+  background-color: #4caf50; /* Primary button color */
   color: #fff; /* White text on buttons */
   padding: 10px 20px; /* Padding inside button */
   border: none; /* Remove border */
@@ -59,6 +59,20 @@ select {
   margin-top: 10px; /* Space above button */
   font-size: 16px; /* Increase font size for readability */
   transition: background-color 0.3s; /* Smooth transition for background */
+}
+
+nav {
+  background-color: #3e86d3;
+  color: white;
+  padding: 5px;
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
 }
 
 .submit:hover {

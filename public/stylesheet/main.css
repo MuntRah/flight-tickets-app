@@ -5,10 +5,11 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f0f0f0;
+  background: url(/images/flight2.png);
 }
 
 nav {
-  background-color: #007bff;
+  background-color: #3e86d3;
   color: white;
   padding: 5px;
   display: flex;
@@ -22,7 +23,6 @@ nav a {
   padding: 10px 15px;
   border-radius: 5px;
 }
-
 
 .welcome-message {
   text-align: center;

@@ -47,6 +47,19 @@ select {
   border-radius: 4px; /* Rounded corners */
   box-sizing: border-box; /* Include padding in width calculation */
 }
+nav {
+  background-color: #3e86d3;
+  color: white;
+  padding: 5px;
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
 
 /* Button Styles */
 .submit {
