@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,13 +7,13 @@ body {
   color: #333;
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure content fills the viewport */
+  min-height: 100vh;
 }
 
 nav {
-  background-color: #3e86d3;
+  background-color: #122234;
   color: white;
-  padding: 15px;
+  padding: 6px;
   display: flex;
 }
 
@@ -23,14 +24,19 @@ nav a {
   border-radius: 5px;
 }
 
-/* Header Styles */
+img {
+  height: 60px;
+  width: 60px;
+  margin-left: 1190px;
+}
+
 h1 {
   color: #333;
   font-size: 36px;
   margin-bottom: 20px;
   margin-left: 580px;
 }
-/* Form Styles */
+
 form {
   background-color: white;
   padding: 20px;
@@ -41,49 +47,45 @@ form {
   margin-left: 550px;
 }
 
-/* Label Styles */
 label {
-  display: block; /* Block display for labels */
-  margin-top: 10px; /* Space above each label */
-  font-weight: bold; /* Bold labels for emphasis */
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
-/* Input Styles */
 input[type="text"],
 input[type="password"] {
-  width: 100%; /* Full width inputs */
-  padding: 10px; /* Padding inside inputs */
-  margin-top: 5px; /* Space between label and input */
-  border: 1px solid #ccc; /* Light border color */
-  border-radius: 4px; /* Rounded corners */
-  box-sizing: border-box; /* Include padding in width calculation */
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-/* Button Styles */
 button {
-  background-color: #f9e090e6; /* Primary button color */
-  color: #fff; /* White text on buttons */
-  padding: 10px 20px; /* Padding inside button */
-  border: none; /* Remove border */
-  border-radius: 4px; /* Rounded corners for buttons */
-  cursor: pointer; /* Pointer cursor on hover */
-  margin-top: 15px; /* Space above button */
-  font-size: 16px; /* Font size for buttons */
-  transition: background-color 0.3s; /* Smooth transition for background */
-  width: 100%; /* Full width button */
+  background-color: #f9e090e6;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
 button:hover {
-  background-color: #8a8d91; /* Darker shade on hover */
+  background-color: #8a8d91;
 }
 
-/* Responsive Styles */
 @media (max-width: 480px) {
   h1 {
-    font-size: 28px; /* Smaller heading on mobile */
+    font-size: 28px;
   }
 
   form {
-    width: 90%; /* Full width on smaller screens */
+    width: 90%;
   }
 }

@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="/stylesheet/new.css" />
   </head>
   <body>
-    <%- include('../partials/_navbar.ejs') %>
-    <h1>Add Ticket</h1>
+    <nav>        <%- include('../partials/_navbar.ejs') %>
+      <img src="/images/worldwide.png" alt="image" />
+    </nav>    <h1>Add Ticket</h1>
 
     <% let date = new Date();  
     let selectedDate =date.toISOString().split('T')[0]; %>

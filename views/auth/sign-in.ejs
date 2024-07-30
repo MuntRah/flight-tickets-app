@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="/stylesheet/signin.css" />
   </head>
   <body>
-    <%- include('../partials/_navbar.ejs') %>
+    <nav>
+      <%- include('../partials/_navbar.ejs') %>
+      <img src="/images/worldwide.png" alt="image" />
+
+    </nav>
+   
     <h1>Sign in</h1>
     <form action="/auth/sign-in" method="POST">
       <label for="username">Username:</label>
