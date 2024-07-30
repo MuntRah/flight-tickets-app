@@ -8,9 +8,7 @@
     <title>Home Page</title>
   </head>
   <body>
-    <nav>
-    <%- include('./partials/_navbar.ejs') %> <% if (user) { %>
-    </nav>
+    <nav><%- include('./partials/_navbar.ejs') %> <% if (user) { %></nav>
     <h1>Welcome flight tickets App, <%= user.username %>!</h1>
 
     <% } else { %>

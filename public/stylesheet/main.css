@@ -23,11 +23,6 @@ nav a {
   border-radius: 5px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px;
-}
 
 .welcome-message {
   text-align: center;

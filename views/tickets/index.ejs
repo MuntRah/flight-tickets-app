@@ -4,56 +4,96 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My tickets</title>
+    <!-- Bulma CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Tickets List</h1>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Tickets List</h1>
 
-    <a href="/users/<%= user._id %>/tickets/new">Add Tickets</a>
-
-    <% if (tickets.length === 0) { %>
-    <p>There are no booked tickets</p>
-    <% } else { %>
-    <ul>
-      <% tickets.forEach((ticket) => { %>
-      <li>
-        <div><%= ticket.country %></div>
-
-        <div><%= ticket.date %></div>
-
-        <div><%= ticket.level %></div>
-
-        <div><%= ticket.type %></div>
-
-        <% let price; %> <% if (ticket.level === 'First' && ticket.type ===
-        'One-Way')
-         {%> <% price = '2000$'; %> 
-         <% } else if (ticket.level ==='First' && ticket.type === 'Transit') {%> <% price = '1800$';%> 
-         <% }
-        else if (ticket.level === 'First' && ticket.type === 'Round-Trip') {%> <% price = '4000$';%> <%} 
-        else if (ticket.level === 'Business' && ticket.type === 'One-Way') {%> <% price = '1000$';%> <% } else if
-        (ticket.level === 'Business' && ticket.type === 'Transit') {%> <% price
-        = '800$';%> <% } else if (ticket.level === 'Business' && ticket.type ===
-        'Round-Trip') {%> <% price = '900$';%> <% } else if (ticket.level ===
-        'Economy' && ticket.type === 'One-Way') {%> <% price = '750$';%> <% }
-        else if (ticket.level === 'Economy' && ticket.type === 'Transit') {%> <%
-        price = '650$';%> <% } else if (ticket.level === 'Economy' &&
-        ticket.type === 'Round-Trip') {%> <% price = '850$';%> <% } else {%> <%
-        price = 'Unknown'; %> <% }%>
-
-        <p>Price: <%= price %></p>
-
-        <a href="/users/<%= user._id %>/tickets/<%= ticket._id %>/edit">Edit</a>
-
-        <form
-          action="/users/<%= user._id %>/tickets/<%= ticket._id %>?_method=DELETE"
-          method="POST"
+        <a
+          href="/users/<%= user._id %>/tickets/new"
+          class="button is-primary mb-3"
+          >Add Tickets</a
         >
-          <button type="submit">Delete</button>
-        </form>
-      </li>
-      <% }) %>
-    </ul>
-    <% } %>
+
+        <% if (tickets.length === 0) { %>
+        <div class="notification is-warning">There are no booked tickets</div>
+        <% } else { %>
+        <div class="list">
+          <% tickets.forEach((ticket) => { %>
+          <div class="list-item">
+            <div class="box">
+              <div class="columns">
+                <div class="column">
+                  <strong>Country:</strong> <%= ticket.country %>
+                </div>
+                <div class="column">
+                  <strong>Date:</strong> <%= ticket.date.toISOString().split('T')[0] %>
+                </div>
+                <div class="column">
+                  <strong>Level:</strong> <%= ticket.level %>
+                </div>
+                <div class="column">
+                  <strong>Type:</strong> <%= ticket.type %>
+                </div>
+              </div>
+
+              <% let price; %> <% if (ticket.level === 'First' && ticket.type
+              === 'One-Way') { %> <% price = '2000$'; %> <% } else if
+              (ticket.level === 'First' && ticket.type === 'Transit') { %> <%
+              price = '1800$'; %> <% } else if (ticket.level === 'First' &&
+              ticket.type === 'Round-Trip') { %> <% price = '4000$'; %> <% }
+              else if (ticket.level === 'Business' && ticket.type === 'One-Way')
+              { %> <% price = '1000$'; %> <% } else if (ticket.level ===
+              'Business' && ticket.type === 'Transit') { %> <% price = '800$';
+              %> <% } else if (ticket.level === 'Business' && ticket.type ===
+              'Round-Trip') { %> <% price = '900$'; %> <% } else if
+              (ticket.level === 'Economy' && ticket.type === 'One-Way') { %> <%
+              price = '750$'; %> <% } else if (ticket.level === 'Economy' &&
+              ticket.type === 'Transit') { %> <% price = '650$'; %> <% } else if
+              (ticket.level === 'Economy' && ticket.type === 'Round-Trip') { %>
+              <% price = '850$'; %> <% } else { %> <% price = 'null'; %> <% } %>
+
+              <p><strong>Price:</strong> <%= price %></p>
+
+              <% let date = new Date(); let DBdate = new
+              Date(ticket.date).toISOString().split('T')[0]; let selectedDate =
+              date.toISOString().split('T')[0]; %>
+
+              <div class="buttons">
+                <a
+                  href="/users/<%= user._id %>/tickets/<%= ticket._id %>/edit"
+                  class="button is-info is-small"
+                  >Edit</a
+                >
+                <% if (DBdate >= selectedDate) { %>
+                <form
+                  action="/users/<%= user._id %>/tickets/<%= ticket._id %>?_method=DELETE"
+                  method="POST"
+                  class="is-inline"
+                >
+                  <button
+                    type="submit"
+                    class="button is-danger is-small"
+                    hidden
+                  >
+                    Delete
+                  </button>
+                </form>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <% } %>
+      </div>
+    </section>
   </body>
 </html>
