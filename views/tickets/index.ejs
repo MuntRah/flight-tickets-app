@@ -4,13 +4,92 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My tickets</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-      rel="stylesheet"
-    />
+    <style>
+      /* Add custom styles here to replace Bulma classes */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+      .title {
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+      }
+      .button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #00d1b2;
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 1rem;
+      }
+      .button.is-primary {
+        background-color: #00d1b2;
+      }
+      .button.is-info {
+        background-color: #209cee;
+      }
+      .button.is-danger {
+        background-color: #ff3860;
+      }
+      .notification {
+        padding: 1rem;
+        border-radius: 4px;
+        background-color: #ffdd57;
+        color: #333;
+      }
+      .list {
+        list-style-type: none;
+        padding: 0;
+      }
+      .list-item {
+        margin-bottom: 1rem;
+      }
+      .box {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      .columns {
+        display: flex;
+      }
+      .column {
+        flex: 1;
+        padding: 0.5rem;
+      }
+      .buttons {
+        display: flex;
+        gap: 0.5rem;
+      }
+      .is-inline {
+        display: inline;
+      }
+      .navbar {
+        background-color: #122234;
+        padding: 1.5rem;
+        font-family: Arial, sans-serif;
+      }
+      .navbar a {
+        color: #fff;
+        text-decoration: none;
+        margin-right: 1rem;
+        font-size: 1rem;
+      }
+    </style>
   </head>
   <body>
-    <%- include('../partials/_navbar.ejs') %>
+    <nav class="navbar">
+      <a href="/home">Home</a>
+      <a href="/users/<%= user._id %>/tickets">Tickets</a>
+      <a href="/signout">Sign Out</a>
+    </nav>
+
     <section class="section">
       <div class="container">
         <h1 class="title">Tickets List</h1>
@@ -22,18 +101,19 @@
         >
 
         <% if (tickets.length === 0) { %>
-        <div class="notification is-warning">There are no booked tickets</div>
+        <div class="notification">There are no booked tickets</div>
         <% } else { %>
-        <div class="list">
+        <ul class="list">
           <% tickets.forEach((ticket) => { %>
-          <div class="list-item">
+          <li class="list-item">
             <div class="box">
               <div class="columns">
                 <div class="column">
                   <strong>Country:</strong> <%= ticket.country %>
                 </div>
                 <div class="column">
-                  <strong>Date:</strong> <%= ticket.date.toISOString().split('T')[0] %>
+                  <strong>Date:</strong> <%=
+                  ticket.date.toISOString().split('T')[0] %>
                 </div>
                 <div class="column">
                   <strong>Level:</strong> <%= ticket.level %>
@@ -88,9 +168,9 @@
                 <% } %>
               </div>
             </div>
-          </div>
+          </li>
           <% }) %>
-        </div>
+        </ul>
         <% } %>
       </div>
     </section>
