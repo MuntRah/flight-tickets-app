@@ -32,7 +32,19 @@ h1 {
   font-style: normal;
   display: flex;
   justify-content: center;
-  margin-top: 300;
+  margin-top: 310;
+  color: rgba(3, 16, 8, 0.441);
+}
+
+h4 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+  font-style: normal;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-right: 160px;
   color: rgba(3, 16, 8, 0.441);
 }
 
