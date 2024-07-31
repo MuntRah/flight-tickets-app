@@ -3,26 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href=" /stylesheet/main.css" />
-    <link rel="stylesheet" />
-    <link rel="stylesheet" />
-
+    <link rel="stylesheet" href="/stylesheet/main.css" />
     <title>Home Page</title>
   </head>
   <body>
+    <video class="video-background" autoplay muted loop>
+      <source src="/images/Eighty.mp4" type="video/mp4" />
+      the video
+    </video>
+
     <nav>
       <%- include('./partials/_navbar.ejs') %>
-      <img src="/images/worldwide.png" alt="image" />
+      <img src="/images/orange.png" alt="image" />
     </nav>
+
     <% if (user) { %>
-
-    <h1>Welcome Flight Tickets App, <%= user.username %>!</h1>
+    <h1>Welcome To Flight Tickets App, <%= user.username %>!</h1>
     <h4>Your Window To Discover The World</h4>
-
     <% } else { %>
     <h1>Welcome To Flight Tickets App, guest.</h1>
     <h4>Your Window To Discover The World</h4>
-
     <% } %>
   </body>
 </html>

@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="/stylesheet/new.css" />
   </head>
   <body>
-    <nav>        <%- include('../partials/_navbar.ejs') %>
-      <img src="/images/worldwide.png" alt="image" />
-    </nav>    <h1>Add Ticket</h1>
+    <nav>
+      <%- include('../partials/_navbar.ejs') %>
+      <img src="/images/orange.png" alt="image" />
+    </nav>
+    <h1>Add Ticket</h1>
 
-    <% let date = new Date();  
-    let selectedDate =date.toISOString().split('T')[0]; %>
+    <% let date = new Date(); let selectedDate
+    =date.toISOString().split('T')[0]; %>
 
     <form action="/users/<%= user._id %>/tickets" method="POST">
       <label for="country">Country:</label>
       <input type="text" name="country" id="country" required />
       <label for="date">date:</label>
-      <input type="date" id="date" name="date"  min="<%= selectedDate %>" />
+      <input type="date" id="date" name="date" min="<%= selectedDate %>" />
 
       <label for="type">Type:</label>
       <select name="type" id="type" required>
