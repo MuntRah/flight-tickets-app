@@ -6,7 +6,8 @@ body {
   padding: 0;
   color: #f0f0f0;
   background-color: #f0f0f0;
-  background: url(/images/flight2.png);
+  background: url(/images/sunsetPlante.jpg);
+  background-size: cover;
 }
 
 nav {
