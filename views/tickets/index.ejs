@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My tickets</title>
     <style>
-      /* Add custom styles here to replace Bulma classes */
       .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -84,11 +83,7 @@
     </style>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="/home">Home</a>
-      <a href="/users/<%= user._id %>/tickets">Tickets</a>
-      <a href="/signout">Sign Out</a>
-    </nav>
+    <nav class="navbar"><%- include('../partials/_navbar.ejs') %></nav>
 
     <section class="section">
       <div class="container">
