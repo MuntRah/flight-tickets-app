@@ -26,7 +26,9 @@ The Flight Tickets Booking Application is a user-friendly platform designed to s
 1. he can edit or delete if he want
 
 ## images :
+
 ### (the web)
+
 ![main](/public/images/main.png)
 ![signup](/public/images/signup.png)
 ![signin](/public/images/signin.png)
@@ -34,8 +36,11 @@ The Flight Tickets Booking Application is a user-friendly platform designed to s
 ![add](/public/images/add.png)
 ![added](/public/images/added.png)
 ![edit](/public/images/edit.png)
+
 ### (ERD)
+
 ![main](/public/images/Screenshot%202024-07-25%20163132.png)
+
 ### (wireframe)
 
 ![main](/public/images/Screenshot%202024-07-25%20190408.png)
@@ -44,14 +49,10 @@ The Flight Tickets Booking Application is a user-friendly platform designed to s
 ![main](/public/images/Screenshot%202024-07-25%20191349.png)
 
 ## future enhancement :
-+ maybe i will add admin 
-+ and i will make the coutry field as selection list 
-## Sources : 
-+ i use chat gpt for css styling and i use it to add bootstrab
 
+[] maybe i will add admin
+[] and i will make the coutry field as selection list
 
+## Sources :
 
-
-
-
-
+- i use chat gpt for css styling and i use it to add bootstrab
