@@ -6,7 +6,7 @@ the main idea of this application that is a booking tickets app so the user will
 
 ## **ERD :**
 
-![hello](./plan%20images/Screenshot%202024-07-25%20163132.png)
+![hello](/public/images/Screenshot%202024-07-25%20163132.png)
 
 ## **User Stories :**
 
@@ -19,11 +19,11 @@ the main idea of this application that is a booking tickets app so the user will
 * as a user , i want to be able to sign out
 
 ##  routes
-![first](./plan%20images/Screenshot%202024-07-25%20190408.png)
-![second](./plan%20images/Screenshot%202024-07-25%20190731.png)
-![third](./plan%20images/Screenshot%202024-07-25%20190801.png)
-![fourth](./plan%20images/Screenshot%202024-07-25%20191349.png)
-![fifth](./plan%20images/Screenshot%202024-07-25%20192446.png)
+![first](/public/images/Screenshot%202024-07-25%20190408.png)
+![second](/public/images/Screenshot%202024-07-25%20190731.png)
+![third](/public/images/Screenshot%202024-07-25%20190801.png)
+![fourth](/public/images/Screenshot%202024-07-25%20191349.png)
+![fifth](/public/images/Screenshot%202024-07-25%20192446.png)
 
 ## level up 
 maybe i will addd price also 
